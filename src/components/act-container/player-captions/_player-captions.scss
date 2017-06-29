@@ -1,0 +1,72 @@
+// ==========================================================================
+// player styles
+// https://github.com/selz/player
+// ==========================================================================
+
+@import "tools";
+
+
+// Captions
+// --------------------------------------------------------------
+// Hide default captions
+
+atc-player-captions {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: ($player-control-spacing * 2);
+    transform: translateY(-5vh);
+    transform: translate3d(0, -5vh, 0);
+    transition: transform .3s ease;
+    color: $player-captions-color;
+    font-size: $player-font-size-captions-base;
+    text-align: center;
+    font-weight: 400;
+    z-index: $atc-captions;
+
+    span {
+        border-radius: 2px;
+        padding: floor($player-control-spacing / 3) $player-control-spacing;
+        background: $player-captions-bg;
+        box-decoration-break: clone;
+        line-height: 150%;
+    }
+    span:empty {
+        display: none;
+    }
+
+
+}
+.player-is-captions-active atc-player-captions:not(.hidden) {
+    display: block;
+}
+.player-is-hide-controls atc-player-captions {
+    transform: translateY(-($player-control-spacing * 2));
+}
+
+
+
+
+// Hide controls
+.player-is-hide-controls .player-controls {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.player-is-captions-active .player-controls .icon--captions-on {
+    display: block;
+    & + svg {
+        display: none;
+    }
+}
+
+// Some options are hidden by default
+[data-player='captions'] {
+    display: none;
+}
+[data-player='captions'] {
+    display: inline-block;
+}

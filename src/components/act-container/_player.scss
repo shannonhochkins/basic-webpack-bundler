@@ -1,0 +1,118 @@
+
+
+@import "tools";
+
+atc-video-bg {
+    display:block;
+    transition: opacity $swift-ease-in-out-duration $swift-ease-in-out-timing-function;
+    opacity:0;
+}
+
+.player-has-started {
+    atc-video-bg:not(.player-is-ending) {
+        opacity:1;
+    }
+}
+
+
+
+// Change icons on state change
+.player-is-fullscreen-active .icon--exit-fullscreen {
+    display: block;
+
+    & + svg {
+        display: none;
+    }
+}
+
+[data-player='fullscreen'] {
+    display: inline-block;
+}
+
+// Time
+// --------------------------------------------------------------
+.player-time {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $player-font-size-small;
+}
+// Media duration hidden on small screens
+.player-time + .player-time {
+    display: none;
+
+    // Add a slash in before
+    &::before {
+        content: '\2044';
+        margin-right: $player-control-spacing;
+    }
+}
+
+
+
+
+.player-tooltip {
+    position: absolute;
+    z-index: 2;
+    bottom: 100%;
+    margin-bottom: 10px;
+    padding: 5px 7.5px;
+    opacity: 0;
+    background: rgba(0,0,0,.7);
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.3;
+    transform: translate(-50%,10px) scale(.8);
+    transform-origin: 50% 100%;
+    transition: transform .2s .1s ease,opacity .2s .1s ease
+}
+
+.player-tooltip::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -4px;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(0,0,0,.7);
+    border-left: 4px solid transparent;
+    z-index: 2
+}
+
+.player-controls button.tab-focus:focus .player-tooltip,
+.player-controls button:hover .player-tooltip,.player-tooltip--visible {
+    opacity: 1;
+    transform: translate(-50%,0) scale(1)
+}
+
+.player-controls button:hover .player-tooltip {
+    z-index: 3
+}
+
+.player-controls button:first-child .player-tooltip {
+    left: 0;
+    transform: translate(0,10px) scale(.8);
+    transform-origin: 0 100%
+}
+
+.player-controls button:first-child .player-tooltip::before {
+    left: 16px
+}
+
+.player-controls button:last-child .player-tooltip {
+    right: 0;
+    transform: translate(0,10px) scale(.8);
+    transform-origin: 100% 100%
+}
+
+.player-controls button:last-child .player-tooltip::before {
+    left: auto;
+    right: 16px;
+    transform: translateX(50%)
+}
+
+.player-controls button:first-child .player-tooltip--visible,.player-controls button:first-child.tab-focus:focus .player-tooltip,.player-controls button:first-child:hover .player-tooltip,.player-controls button:last-child .player-tooltip--visible,.player-controls button:last-child.tab-focus:focus .player-tooltip,.player-controls button:last-child:hover .player-tooltip {
+    transform: translate(0,0) scale(1)
+}

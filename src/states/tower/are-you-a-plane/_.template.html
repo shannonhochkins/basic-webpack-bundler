@@ -1,0 +1,7 @@
+<div ng-if="$ctrl.$atc.state.post" class="">
+	<h2>Are you a plane?</h2>
+	<p>{{$ctrl.$atc.testContent}}</p>
+	<p>Going to:</p>
+	<pre>{{$ctrl.$atc.methods.find('nested-deep').component.name | json}}</pre>
+	<atc-countdown from=11 when-finished="$ctrl.$atc.methods.state.go('nested-deep')"></atc-countdown>
+</div>

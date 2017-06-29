@@ -1,0 +1,99 @@
+@import "layering";
+// Typography
+// ------------------------------
+$font-family: Roboto, 'Helvetica Neue', sans-serif !default;
+$font-size:   10px !default;
+
+//-- Must be defined before $font-size.
+@function rem($multiplier) {
+  @return $multiplier * $font-size;
+}
+
+$display-4-font-size-base: rem(4) !default;
+$display-3-font-size-base: rem(3) !default;
+$display-2-font-size-base: rem(2.5) !default;
+$display-1-font-size-base: rem(2) !default;
+$headline-font-size-base:  rem(1.5) !default;
+
+$body-font-size-base:      rem(1.6) !default;
+$caption-font-size-base:   rem(1.1) !default;
+
+
+// Easing Curves
+//--------------------------------------------
+
+$swift-ease-out-duration: 0.4s !default;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+$swift-ease-out: all $swift-ease-out-duration $swift-ease-out-timing-function !default;
+
+$swift-ease-in-duration: 0.3s !default;
+$swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2) !default;
+$swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !default;
+
+$swift-ease-in-out-duration: 0.5s !default;
+$swift-ease-in-out-timing-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
+$swift-ease-in-out: all $swift-ease-in-out-duration $swift-ease-in-out-timing-function !default;
+
+$swift-linear-duration: 0.08s !default;
+$swift-linear-timing-function: linear !default;
+$swift-linear: all $swift-linear-duration $swift-linear-timing-function !default;
+
+
+// ==========================================================================
+// player variables
+// https://github.com/selz/player
+// https://robots.thoughtbot.com/sass-default
+// ==========================================================================
+
+// Settings
+$player-border-box:                       true !default;
+$player-touch-action:                     true !default;
+$player-sr-only-important:                true !default;
+
+// Colors
+$player-color-main:                       #3498db !default;
+
+// Font sizes
+$player-font-family:                      Avenir, 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif !default;
+$player-font-size-small:                  14px !default;
+$player-font-size-base:                   16px !default;
+
+// Captions
+$player-captions-bg:                      transparentize(#000, .3) !default;
+$player-captions-color:                   #fff !default;
+$player-font-size-captions-base:          $player-font-size-base !default;
+$player-font-size-captions-medium:        ceil($player-font-size-base * 1.5) !default;
+$player-font-size-captions-large:         ($player-font-size-base * 2) !default;
+
+// Controls
+$player-control-icon-size:                18px !default;
+$player-control-spacing:                  10px !default;
+$player-control-padding:                  ($player-control-spacing * .7) !default;
+$player-video-controls-bg:                #000 !default;
+$player-video-control-color:              #fff !default;
+$player-video-control-color-hover:        #fff !default;
+$player-video-control-bg-hover:           $player-color-main !default;
+$player-audio-controls-bg:                #fff !default;
+$player-audio-controls-border:            1px solid #dbe3e8 !default;
+$player-audio-control-color:              #565D64 !default;
+$player-audio-control-color-hover:        #fff !default;
+$player-audio-control-bg-hover:           $player-color-main;
+
+// Tooltips
+$player-tooltip-bg:                       transparentize(#000, .3) !default;
+$player-tooltip-color:                    #fff !default;
+$player-tooltip-padding:                  ($player-control-spacing / 2) !default;
+$player-tooltip-arrow-size:               4px !default;
+$player-tooltip-radius:                   3px !default;
+
+// Progress
+$player-progress-loading-size:            25px !default;
+$player-progress-loading-bg:              transparentize(#000, .85) !default;
+$player-video-progress-bg:                transparentize(#fff, .75) !default;
+$player-video-progress-buffered-bg:       $player-video-progress-bg !default;
+$player-audio-progress-bg:                transparentize(#C6D6DB, .33) !default;
+$player-audio-progress-buffered-bg:       $player-audio-progress-bg !default;
+
+
+$player-video-range-track-bg:             $player-video-progress-buffered-bg !default;
+

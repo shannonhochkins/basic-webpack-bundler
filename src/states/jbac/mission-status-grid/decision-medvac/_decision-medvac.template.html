@@ -1,0 +1,11 @@
+<h1>
+	which chopper for medvac?
+</h1>
+
+<div ng-if="$ctrl.$atc.state.post" class="">
+	<div>
+		<atc-button ng-click="$ctrl.$atc.methods.state.go('mission-status-grid')">outlaw</atc-button>
+		<atc-button ng-click="$ctrl.$atc.methods.state.go('assign-redback')">redback</atc-button>
+		<atc-button ng-click="$ctrl.$atc.methods.state.go('assign-spartan')">spartan</atc-button>
+	</div>
+</div>

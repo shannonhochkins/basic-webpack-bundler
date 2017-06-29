@@ -1,0 +1,24 @@
+@import "variables";
+
+.choose-adventure-panel {
+	.adventure-container {
+		// transition: all 0.5s $swift-ease-in-out-timing-function;
+	}
+	.adventure-block {
+		border:1px solid white;
+		border-radius:5px;
+		margin:10px;
+		width:300px;
+		max-width:50%;
+		padding:20px;
+		cursor:pointer;
+		background-color:#222;
+		&:hover {
+			background-color:#333;
+		}
+	}
+}
+
+atc-button{
+	cursor: pointer;
+}

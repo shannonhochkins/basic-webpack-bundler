@@ -1,0 +1,26 @@
+// Setting root sizes and base styles.
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	font-size: 16px;
+}
+
+html,body {
+	background-color:#1a1a1a;
+  	overflow: hidden;
+  	height:100%;
+  	color:#f1f1f1;
+  	text-align:center;
+}
+
+
+// Site-wide base styles.
+body {
+	// font-family: map-get($bodytype, 'font-family'), sans-serif;
+	font-style: normal;
+	// font-weight: map-get($bodytype, regular);
+	line-height: 2rem;
+	// color:getColour('font-colours', 'body');
+}

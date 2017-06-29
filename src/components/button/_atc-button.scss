@@ -1,0 +1,183 @@
+
+.button-outline {
+    position: relative;
+    display: inline-block;
+    height: 2rem;
+    background: 0 0;
+    z-index:0;
+    background-color:steelblue;
+}
+
+html.is-mobile .button-outline.active .button-outline-copy:before,html:not(.is-mobile) .button-outline:hover .button-outline-copy:before {
+    right: calc(62% + 5px)
+}
+
+html.is-mobile .button-outline.active .button-outline-copy:after,html:not(.is-mobile) .button-outline:hover .button-outline-copy:after {
+    left: calc(38% + 5px)
+}
+
+html.is-mobile .button-outline.active .button-outline-bottom:before,html:not(.is-mobile) .button-outline:hover .button-outline-bottom:before {
+    right: calc(38% + 5px)
+}
+
+html.is-mobile .button-outline.active .button-outline-bottom:after,html:not(.is-mobile) .button-outline:hover .button-outline-bottom:after {
+    left: calc(62% + 5px)
+}
+
+.button-outline:after,.button-outline:before {
+    left: 0;
+    position: absolute;
+    content: ''
+}
+
+.button-outline.is-mouse-down .button-outline-copy {
+    color: #fff
+}
+
+.button-outline.is-mouse-down:after {
+    right: 0;
+    opacity: 1;
+    transition-duration: .2s,25ms;
+    transition-delay: 0s,0s
+}
+
+.button-outline.is-mouse-down.inverted .button-outline-copy {
+    color: #0e182d
+}
+
+.button-outline.inverted,
+    html.is-mobile .button-fullwidth.active:not(.is-inverted) .button-icon .icon,
+    html:not(.is-mobile) .button-fullwidth:hover:not(.is-inverted) .button-icon .icon {
+    color: #fff
+}
+
+.button-outline:before {
+    right: 0;
+    top: 50%;
+    height: 100%;
+    border-left: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%)
+}
+
+.button-outline .loader,.profile-scroll-pagination li:after {
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%)
+}
+
+.button-outline:after {
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 60%;
+    background: currentColor;
+    transition: right 0s cubic-bezier(.19,1,.22,1) 110ms,opacity .1s cubic-bezier(.25,.25,.75,.75) 0s;
+    opacity: 0
+}
+
+.button-outline.inverted .button-outline-copy:after,.button-outline.inverted .button-outline-copy:before {
+    background: #fff
+}
+
+.button-outline.full-width {
+    display: block;
+    text-align: center
+}
+
+.button-outline.full-width .button-outline-copy {
+    padding: 0
+}
+
+.button-outline .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
+
+.button-outline-copy {
+    position: relative;
+    display: block;
+    padding: 0 2.6rem;
+    font: 400 18px/2.2rem StratumBlack,Arial,sans-serif;
+    font-size: .9rem;
+    transition: color .4s cubic-bezier(.19,1,.22,1)
+}
+
+.button-outline-copy:after,.button-outline-copy:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 1px;
+    background: currentColor;
+    left: 0;
+    right: 0;
+    transition: all .6s cubic-bezier(.19,1,.22,1) 50ms
+}
+
+.button-outline-copy:before {
+    right: calc(38% + 5px)
+}
+
+.button-outline-copy:after {
+    left: calc(62% + 5px)
+}
+
+.button-outline-copy.small-padding {
+    padding: 0 1.9rem
+}
+
+.button-outline-copy.small-copy {
+    font-size: .75rem
+}
+
+.button-outline-icon {
+    height: .95rem;
+    width: .95rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -1px;
+    margin-right: .25em;
+    position: relative;
+    top: -.0625em
+}
+
+.button-outline-bottom:after,.button-outline-bottom:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    left: 0;
+    right: 0;
+    transition: all .8s cubic-bezier(.19,1,.22,1) 50ms
+}
+
+.button-outline-bottom:before {
+    right: calc(62% + 5px)
+}
+
+.button-outline-bottom:after {
+    left: calc(38% + 5px)
+}
+
+@media (max-width: 767px) {
+    .button-outline {
+        height:3rem
+    }
+
+    .button-outline-copy {
+        font-size: 1.2rem;
+        line-height: 3.2rem
+    }
+
+    .button-outline.inverted:before {
+        border-color: #fff
+    }
+
+    .button-outline.inverted .button-outline-bottom:after,.button-outline.inverted .button-outline-bottom:before,.button-outline.inverted .button-outline-copy:after,.button-outline.inverted .button-outline-copy:before {
+        background: #fff
+    }
+}

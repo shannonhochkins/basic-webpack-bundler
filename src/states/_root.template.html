@@ -1,0 +1,26 @@
+<div class="choose-adventure-panel">
+	<h1>{{$ctrl.title}}</h1>
+	<p>As a Joint Battlefield Airspace Controller (JBAC) you’re responsible for more than just aircraft movements. During exercises and operations you are also responsible for safely integrating aviation weapons, artillery, naval gunfire and unmanned aircraft</p>
+	<br />
+	<!-- <pre>
+		{{ $ctrl.data | json }}
+	</pre>
+	<pre>
+		{{ $ctrl.next | json }}
+	</pre> -->
+	<h2>Choose Your First Adventure</h2>	
+	<div class="adventure-container layout-row layout-align-center-stretch">
+		<div class="adventure-block layout-column layout-align-center-center" ng-click="$ctrl.$atc.methods.state.go('jbac')">
+			<h3>JBAC</h3>
+			<p>Control 100 km of airspace surrounding your base</p>
+			<small><i>Approx time 5mins</i></small>
+			<atc-button >START</atc-button>
+		</div>
+		<div class="adventure-block layout-column layout-align-center-center" ng-click="$ctrl.$atc.methods.state.go('tower')">
+			<h3>TOWER</h3>
+			<p>Provide tactical airspace control for your birgade</p>
+			<small><i>Approx time 3mins</i></small>
+			<atc-button >START</atc-button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+<div ng-if="$ctrl.$atc.state.post" class="">
+	<h2>Rule the skies template</h2>
+	<p>{{$ctrl.$atc.testContent}}</p>
+	<p>Going to:</p>
+	<pre>{{$ctrl.$atc.methods.find('are-you-a-plane').component.name | json}}</pre>
+	<atc-counter to=11 when-finished="$ctrl.$atc.methods.state.go('are-you-a-plane')"></atc-counter>
+	<atc-button ng-click="$ctrl.$atc.methods.state.go('are-you-a-plane')">CORRECT</atc-button>
+	<atc-button ng-click="$ctrl.$atc.methods.state.go('rule-the-skies')">INCORRECT</atc-button>
+</div>

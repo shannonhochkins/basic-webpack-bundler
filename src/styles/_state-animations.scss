@@ -1,0 +1,76 @@
+
+@keyframes fadeIn {
+  from { 
+  	opacity:0;
+	transform: translateY(-100%);
+	transform: translate3d(0,-100%,0);
+  }
+  to { 
+  	transform: translateY(0%);
+	transform: translate3d(0,0%,0);
+	opacity:1;
+  }
+}
+
+@keyframes fadeOut {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+[ui-view] {
+	height:100%;
+}
+
+.animate-when-stage-ready {
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	&.ng-enter {
+	    transition: all 0.5s $swift-ease-in-out-timing-function;
+	    transition-delay:0.5s;
+	    opacity:0;
+	}
+	&.ng-enter-active {
+	    opacity:1;
+	}
+	&.ng-leave {        
+	    transition: all 0.5s $swift-ease-in-out-timing-function;
+	    opacity:1;
+	}
+	&.ng-leave.ng-leave-active {
+	    opacity:0;
+	}
+}
+
+.animate-when-requesting-api {
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	&.ng-enter {		
+		transition: all 0.5s $swift-ease-in-out-timing-function;
+	    opacity:0;
+	    transform: translateY(50vh);
+	  	transform: translate3d(0,50vh,0);
+	}
+	&.ng-enter.ng-enter-active {
+	  	transform: translateY(0vh);
+		transform: translate3d(0,0vh,0);
+	    opacity:1;
+	}
+	&.ng-leave {        
+	    transition: all 0.5s $swift-ease-in-out-timing-function;
+	    transform: translateY(0vh);
+		transform: translate3d(0,0vh,0);
+	    opacity:1;
+	}
+	&.ng-leave.ng-leave-active {
+	    opacity:0;
+	    transform: translateY(50vh);
+	  	transform: translate3d(0,50vh,0);
+	}
+}
+
+

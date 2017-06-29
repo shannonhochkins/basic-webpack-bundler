@@ -1,0 +1,11 @@
+
+// This is a mixin, which fixes IE11's vertical alignment issue, when using `min-height`.
+// See https://connect.microsoft.com/IE/feedback/details/816293/
+@mixin ie11-min-height-flexbug($min-height) {
+  &::before {
+    content: '';
+    min-height: $min-height;
+    visibility: hidden;
+    display: inline-block;
+  }
+}

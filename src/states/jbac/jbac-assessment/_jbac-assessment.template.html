@@ -1,0 +1,12 @@
+<!-- <h1 ng-if="$ctrl.$atc.state.pre">
+	Only shown during a video	
+</h1> -->
+
+
+<div ng-if="$ctrl.$atc.state.post" class="">
+	<h2>mission complete</h2>
+	<!-- <atc-countdown from=11 when-finished="$ctrl.$atc.methods.state.go('did-a-kangaroo-do-it')"></atc-countdown> -->
+	<atc-button ng-click="$ctrl.$atc.methods.state.go('')">find out more</atc-button>
+	<atc-button ng-click="$ctrl.$atc.methods.state.go('')">play sky's the limit</atc-button>
+	<atc-button ng-click="$ctrl.$atc.methods.state.go('')">try again</atc-button>
+</div>

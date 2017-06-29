@@ -1,0 +1,180 @@
+// ==========================================================================
+// player styles
+// https://github.com/selz/player
+// ==========================================================================
+
+@import "tools";
+
+
+// Playback controls
+.player-controls {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    text-align: center;
+    z-index:$atc-controls;
+
+    // Spacing
+    > button,
+    .player-time {
+        margin-left: ($player-control-spacing / 2);
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    [data-player="pause"] {
+        margin-left: 0;
+    }
+
+    // Buttons
+    button {
+        position: relative;
+        display: inline-block;
+        flex-shrink: 0;
+        overflow: visible; // IE11
+        vertical-align: middle;
+        padding: ($player-control-spacing * .7);
+        border: 0;
+        background: transparent;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background .3s ease, color .3s ease, opacity .3s ease;
+        color: inherit;
+
+        svg {
+            width: $player-control-icon-size;
+            height: $player-control-icon-size;
+            display: block;
+            fill: currentColor;
+        }
+
+        // Default focus
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    // Hide toggle icons by default
+    .icon--exit-fullscreen,
+    .icon--muted,
+    .icon--captions-on {
+        display: none;
+    }
+
+}
+// Hide controls
+.player-is-hide-controls .player-controls {
+    opacity: 0;
+    pointer-events: none;
+}
+
+// Video controls
+.player-controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: ($player-control-spacing * 5) $player-control-spacing $player-control-spacing;
+    background: linear-gradient(transparentize($player-video-controls-bg, 1), transparentize($player-video-controls-bg, .5));
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    color: $player-video-control-color;
+    transition: opacity .3s ease;
+
+    button {
+        // Hover and tab focus
+        &.tab-focus:focus,
+        &:hover {
+            background: $player-video-control-bg-hover;
+            color: $player-video-control-color-hover;
+        }
+    }
+}
+
+
+
+// States
+.player-controls [data-player='pause'],
+.player-is-playing .player-controls [data-player='play'] {
+    display: none;
+}
+.player-is-playing .player-controls [data-player='pause'] {
+    display: inline-block;
+}
+
+// Change icons on state change
+.player-is-fullscreen-active .icon--exit-fullscreen,
+.player-is-muted .player-controls .icon--muted {
+    display: block;
+
+    & + svg {
+        display: none;
+    }
+}
+
+
+// First tooltip
+.player-controls button:first-child .player-tooltip {
+    left: 0;
+    transform: translate(0, 10px) scale(.8);
+    transform-origin: 0 100%;
+
+    &::before {
+        left: ($player-control-icon-size / 2) + $player-control-padding;
+    }
+}
+
+// Last tooltip
+.player-controls button:last-child .player-tooltip {
+    right: 0;
+    transform: translate(0, 10px) scale(.8);
+    transform-origin: 100% 100%;
+
+    &::before {
+        left: auto;
+        right: ($player-control-icon-size / 2) + $player-control-padding;
+        transform: translateX(50%);
+    }
+}
+
+// Time
+// --------------------------------------------------------------
+.player-time {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $player-font-size-small;
+}
+// Media duration hidden on small screens
+.player-time + .player-time {
+    display: none;
+
+    // Add a slash in before
+    &::before {
+        content: '\2044';
+        margin-right: $player-control-spacing;
+    }
+}
+
+
+.player-controls {
+
+
+    .progress-container {
+      width: 100%;
+      background-color: transparent;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: .25em;
+      display: block;
+    }
+
+    .progress-bar {
+      background-color: red;
+      width: 0%;
+      display: block;
+      height: inherit;
+    }
+
+}

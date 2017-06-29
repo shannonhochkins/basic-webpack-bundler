@@ -1,0 +1,22 @@
+@import "tools";
+
+
+atc-debugger {
+	z-index:$atc-debugger;
+	position: fixed; top: 0; left:0; width:400px; padding:10px;
+    background: deepblue;
+}
+atc-debugger .code {
+	font-family: 'Inconsolata', Monaco, Consolas, 'Andale Mono', monospace;
+	white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.4;
+    tab-size: 4;
+    hyphens: none;
+}
+.bool {color:#07a}
+.punctuation {color:#999}
+.null {color:#DD4A68}
+.string {color:#690}
+.error {color:red}

@@ -1,0 +1,26 @@
+
+
+<atc-video-bg
+	mute="$atc.mute"
+	on-state-change="$atc.methods.video.onStateChange(player, state)"
+	on-api-ready="$atc.methods.video.onApiReady()"
+	on-player-ready="$atc.methods.video.onPlayerReady(player)"
+	video-id="$atc.state.current.data.videoId"></atc-video-bg>
+	
+<div class="stage-overlay layout-row layout-align-center-center">
+	<div>
+		<div ui-view class="animate-when-stage-ready layout-row layout-align-center-center" ng-if="$atc.stageReady && !$atc.isLoading"></div>
+		<div class="animate-when-requesting-api layout-row layout-align-center-center" ng-if="!$atc.apiReady || $atc.isLoading">
+			<div class="atc-loader"> 
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<atc-player-controls state="$atc.playerState"></atc-player-controls>
+<atc-player-captions state="$atc.playerState"></atc-player-captions>
+
+
